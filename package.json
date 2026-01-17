@@ -30,17 +30,19 @@
       "signAndEditExecutable": false
     },
     "mac": {
-      "target": {
-        "target": "dmg",
-        "arch": ["x64", "arm64"]
-      },
+      "target": "dmg",
       "icon": "build/icons/mac/icon.icns",
       "category": "public.app-category.music",
       "minimumSystemVersion": "10.13"
     },
     "dmg": {
       "title": "thqlabel",
-      "icon": "build/icons/mac/icon.icns"
+      "icon": "build/icons/mac/icon.icns",
+      "contents": [
+        { "x": 130, "y": 220 },
+        { "x": 410, "y": 220, "type": "link", "path": "/Applications" }
+      ],
+      "window": { "width": 540, "height": 380 }
     },
     "nsis": {
       "oneClick": false,
