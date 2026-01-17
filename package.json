@@ -1,0 +1,73 @@
+{
+  "name": "thqlabel",
+  "version": "1.0.0",
+  "description": "thqlabel - Официальное приложение",
+  "main": "main.js",
+  "author": "thqlabel",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac"
+  },
+  "build": {
+    "appId": "ru.thqlabel.app",
+    "productName": "thqlabel",
+    "copyright": "Copyright © 2026 thqlabel",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "icon.png",
+      "icon.ico",
+      "build/icons/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icons/win/icon.ico",
+      "signAndEditExecutable": false
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icons/mac/icon.icns",
+      "category": "public.app-category.music"
+    },
+    "dmg": {
+      "title": "thqlabel",
+      "icon": "build/icons/mac/icon.icns"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "build/icons/win/icon.ico",
+      "uninstallerIcon": "build/icons/win/icon.ico",
+      "installerHeaderIcon": "build/icons/win/icon.ico",
+      "installerSidebar": "build/installerSidebar.bmp",
+      "uninstallerSidebar": "build/installerSidebar.bmp",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "thqlabel",
+      "runAfterFinish": true,
+      "installerLanguages": [
+        "ru",
+        "en"
+      ],
+      "language": "1049",
+      "include": "build/installer.nsh",
+      "deleteAppDataOnUninstall": true,
+      "uninstallDisplayName": "thqlabel"
+    }
+  },
+  "devDependencies": {
+    "canvas": "^3.2.1",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.13.3",
+    "electron-icon-maker": "^0.0.5",
+    "electron-packager": "^17.1.2",
+    "jimp": "^1.6.0",
+    "png-to-ico": "^3.0.1"
+  }
+}
